@@ -9,10 +9,15 @@ public class EmployeeWage
 		int empHrs=0;
                 int empWage=0;
                 int wagePerHour=20;
-		for(int i=0; i<NUMBER_WORKING_DAYS; i++)
-		{ 
+
+		int totalWorkingDays=0;
+		int totalEmpHrs=0;
+		int totalMaxEmpHrs=100;
+while(totalWorkingDays<NUMBER_WORKING_DAYS && totalEmpHrs<totalMaxEmpHrs)
+		{
+   			totalWorkingDays++;
 		int randomCheck=(int) (Math.random()*10)%3;
-		switch(randomCheck)
+			switch(randomCheck)
 		     {
 
 		case 1:
@@ -34,10 +39,13 @@ public class EmployeeWage
 				break;
 			}
 
-			empWage=EMP_RATE_PER_HOUR*empHrs;
-			System.out.println("Employee daily wage:" + empWage);
-			totalSalary=totalSalary+empWage;
+			totalEmpHrs=totalEmpHrs+empHrs;
+
 		}
+
+		totalSalary=totalEmpHrs*EMP_RATE_PER_HOUR;
+		System.out.println("Total employee hours:" + totalEmpHrs);
 		System.out.println("Total employee wage:" + totalSalary);
+
 	}
 }
