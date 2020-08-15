@@ -4,28 +4,32 @@ public class EmployeeWage
 	{
 		System.out.println("Welcome to employee wage problem");
 
-		int fullTime=1;
 		int empHrs=0;
                 int empWage=0;
                 int wagePerHour=20;
-                int partTime=2;
 		int randomCheck=(int) (Math.random()*10)%3;
-		if(randomCheck==fullTime)
-		{
+		switch(randomCheck)
+		     {
+
+		case 1:
+		          
 			System.out.println("Employee is present");
 			empHrs=8;
-			}
-              else if(randomCheck==partTime)
-		{
+			      break;
+				
+              case 2:
+		  System.out.println("Employee is part time");
 			empHrs=4;
-		}
+				break;
+		
 
-		else
-		{	
+		 default:
+		
 			System.out.println("Employee is absent");
 				empHrs=0;
+				break;
 			}
 			empWage=wagePerHour*empHrs;
 		System.out.println("Employee daily wage:" + empWage);
-}
+	}
 }
